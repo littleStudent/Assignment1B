@@ -1,0 +1,46 @@
+Part B - Scheduler
+
+Arguments
+
+The Scheduler application should expect the following arguments:
+
+    tcpPort: the port to be used for instantiating a java.net.ServerSocket (handling TCP connection requests from clients).
+    udpPort: the port to be used for instantiating a java.net.DatagramSocket (handling UDP requests from Generic Task Engines.
+    min: minimum amount of used Generic Task Engines.
+    max: maximum amount of used Generic Task Engines.
+    timeout: the period in milliseconds each Generic Task Engine has to send an isAlive packet (only containing the TCP port and the energy signature). If no such packet is received within this time, the Generic Task Engine is assumed to be offline and is no longer available for handling requests.
+    checkPeriod: specifies that the test whether a Generic Task Engine has timed-out or not (see timeout) is repeated every checkPeriod milliseconds. 
+
+If any argument is invalid or missing print a usage message and exit.
+
+
+
+Part B - Generic Task Engine
+
+Arguments
+
+The generic task engine application should expect the following arguments:
+
+    tcpPort: the port to be used for instantiating a java.net.ServerSocket (handling TCP connection requests from clients).
+    schedulerHost: the host name or IP address where the Scheduler is running.
+    schedulerUDPPort: the UDP port where the Scheduler is listening for datagrams
+    alivePeriod: the period in ms the Generic Task Engine needs to send an isAlive datagram to the Scheduler.
+    minConsumption: energy consumption after start-up (0% load)
+    maxConsumption: energy consumption at 100% load
+    taskDir: the directory where tasks, which should be executed, are saved to. 
+
+If any argument is invalid or missing print a usage message and exit.
+
+
+
+Part B - Client
+
+Arguments
+
+The client application should expect the following arguments:
+
+    schedulerHost: the host name or IP address where the Scheduler is running.
+    schedulerTCPPort: the TCP port where the Scheduler is listening for client connections.
+    taskDir: the directory where tasks, which should be executed, are located. 
+
+If any argument is invalid or missing print a usage message and exit.
